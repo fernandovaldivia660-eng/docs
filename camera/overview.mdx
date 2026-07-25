@@ -1,7 +1,7 @@
 ---
-title: "Camera tracking in El Piso es Lava"
+title: "Set up automatic camera tracking in El Piso es Lava"
 sidebarTitle: "Overview"
-description: "Learn how the optional camera turns your phone into an automatic lava referee — tracking violations, steps, and cup grabs with no server or AI required."
+description: "Learn how the optional camera turns your phone into an automatic lava referee — tracking violations, cup grabs, and safe zones with no server required."
 ---
 
 El Piso es Lava can use your device's camera to referee the game without anyone lifting a finger. When camera tracking is on, the app watches the play area in real time, spots when a player steps on unmarked floor (lava), and even notices when someone grabs the cup — all through simple color-blob detection that runs entirely on your device.
@@ -23,7 +23,7 @@ All processing happens locally in your browser. No video is sent to any server, 
 To use camera tracking you need:
 
 - A **modern browser** (Chrome, Safari, Firefox, Edge) with camera permission granted.
-- The page served over **HTTPS** or opened directly as a local file — browsers block camera access on plain HTTP.
+- The page served over **HTTPS**, or opened as a local `file://` in **Safari** — browsers block camera access on plain HTTP.
 - A **rear-facing camera** is preferred for a top-down view of the room (you can switch to front camera during calibration).
 - **Good lighting** — bright, even light lets the tracker reliably find each player's color.
 - **Vibrant, solid-color items** for each player to wear or hold (bracelet, sock, paper strip).
@@ -58,7 +58,7 @@ Camera tracking is entirely optional. A manual tap is always available as a fall
 
 <CardGroup cols={2}>
   <Card title="Calibration" icon="sliders" href="/camera/calibration">
-    Walk through the four-step setup wizard to frame the room, mark safe zones, and register every player's color.
+    Walk through the setup wizard to frame the room, mark safe zones, register every player's color, and verify live tracking.
   </Card>
   <Card title="Player Colors" icon="palette" href="/camera/player-colors">
     See the eight assigned colors, learn what items work best, and troubleshoot tracking problems.

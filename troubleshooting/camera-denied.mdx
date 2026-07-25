@@ -1,5 +1,5 @@
 ---
-title: "Fix camera permission errors in El Piso es Lava"
+title: "Fix camera access and permission errors in El Piso es Lava"
 sidebarTitle: "Camera Errors"
 description: "Resolve camera permission denials, HTTPS errors, and device conflicts in El Piso es Lava, plus how to play without a camera at all."
 ---
@@ -12,7 +12,7 @@ El Piso es Lava can use your device's camera to detect when a player touches the
 
 ## Permission denied
 
-This error appears as `NotAllowedError` or `PermissionDeniedError` in the status area. It means you previously tapped **Block** when the browser asked for camera access, or the browser's saved permission for this page is set to denied.
+This error appears as a **permission denied** message in the camera status area. It means you previously tapped **Block** when the browser asked for camera access, or the browser's saved permission for this page is set to denied.
 
 <Steps>
   <Step title="Open the permission settings in Safari (iPhone/iPad)">
@@ -37,7 +37,7 @@ This error appears as `NotAllowedError` or `PermissionDeniedError` in the status
 
 ## Not on HTTPS
 
-This error appears as `SecurityError` or the camera panel may simply fail silently. Browsers require a **secure context** to access the camera. A secure context means either:
+This error appears as a **security or insecure context** message in the camera panel, or the panel may fail silently. Browsers require a **secure context** to access the camera. A secure context means either:
 
 - the page is served over **HTTPS** (`https://`), or
 - the page is opened directly from a local file (`file://`).
@@ -63,7 +63,7 @@ Plain `http://` addresses are not secure contexts and the browser will refuse ca
 
 ## Camera already in use
 
-This error appears as `NotReadableError` or `TrackStartError`. It means another app or browser tab currently has exclusive control of the camera hardware. Only one app can use the camera at a time on most mobile devices.
+This error appears as a **camera not readable** or **could not start camera** message. It means another app or browser tab currently has exclusive control of the camera hardware. Only one app can use the camera at a time on most mobile devices.
 
 <Steps>
   <Step title="Identify the conflicting app">
@@ -81,7 +81,7 @@ This error appears as `NotReadableError` or `TrackStartError`. It means another 
 
 ## No camera found
 
-This error appears as `NotFoundError`. It means the browser could not find any camera device to connect to. This happens in a few situations:
+This error appears as a **no camera found** message. It means the browser could not find any camera device to connect to. This happens in a few situations:
 
 - You are on a desktop or laptop without a webcam.
 - You are on a device where the camera hardware is not exposed to the browser (some kiosk or managed devices).

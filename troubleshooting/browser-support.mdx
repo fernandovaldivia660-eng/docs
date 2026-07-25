@@ -34,8 +34,8 @@ Each browser feature has a minimum version below which it will not function. If 
 
 | Feature | Safari | Chrome | Firefox | Edge | Samsung Internet |
 |---|---|---|---|---|---|
-| Voice (SpeechSynthesis) | 7+ | 33+ | 49+ desktop only | 14+ | 4+ |
-| Camera (getUserMedia) | 11+ | 47+ | 36+ | 12+ | 5+ |
+| Voice | 7+ | 33+ | 49+ desktop only | 14+ | 4+ |
+| Camera | 11+ | 47+ | 36+ | 12+ | 5+ |
 | Wake Lock (screen-on) | 16.4+ | 84+ | ❌ not supported | 84+ | 14.0+ |
 | Web Audio API | 6+ | 14+ | 25+ | 12+ | 4+ |
 | **Recommended minimum** | **iOS 14.5 / Safari 14** | **v89+** | **v100+ (desktop)** | **v89+** | **v14+** |
@@ -59,7 +59,7 @@ When you download the file and open it from your device's file system, the brows
     Opening from `file://` is fully supported. Voice, camera, and Wake Lock all work. This is the recommended way to run the game on iOS.
   </Card>
   <Card title="Chrome on Android or desktop" icon="chrome">
-    Voice and Wake Lock work from `file://`. However, Chrome may block `getUserMedia` (camera) on `file://` URLs. If the camera does not start, serve the file over `localhost` instead, or use Safari.
+    Voice and Wake Lock work from `file://`. However, Chrome may block camera access on `file://` URLs. If the camera does not start, serve the file over `localhost` instead, or use Safari.
   </Card>
 </CardGroup>
 
@@ -90,7 +90,7 @@ Many messaging and social media apps (WhatsApp, Instagram, Telegram, TikTok, Twi
 
 El Piso es Lava detects this and displays a warning banner. In this context:
 
-- **Camera is blocked** — iframes cannot request `getUserMedia`.
+- **Camera is blocked** — iframes cannot request camera access.
 - **Voice may be blocked** — some webviews restrict the Web Speech API.
 - **Wake Lock is blocked** — not available inside iframes.
 

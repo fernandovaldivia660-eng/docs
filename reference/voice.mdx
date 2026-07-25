@@ -1,7 +1,7 @@
 ---
-title: "Voice settings and Spanish TTS configuration"
+title: "Voice settings and Spanish TTS setup for El Piso es Lava"
 sidebarTitle: "Voice"
-description: "Configure the Spanish text-to-speech voice in El Piso es Lava, install voices on iOS and Android, and control narration during play."
+description: "Configure the Spanish text-to-speech voice for El Piso es Lava, install voices on iPhone or Android, and control narration during play."
 ---
 
 El Piso es Lava uses your browser's built-in Speech Synthesis API to narrate the game in Spanish. Choosing the right voice makes the experience more immersive, and installing a high-quality Spanish voice on your device ensures you hear every countdown and warning clearly.
@@ -109,4 +109,13 @@ Once the game is running, you can turn narration on or off at any time without i
 
 ## Voice rate and pitch
 
-The app intentionally speaks slightly faster and at a higher pitch than the system default — this adds energy and urgency to the narration that suits the pace of the game. You do not need to adjust these values manually; they are tuned per difficulty mode and applied automatically.
+The app intentionally speaks slightly faster and at a higher pitch than the system default — this adds energy and urgency to the narration that suits the pace of the game. You do not need to adjust these values manually; they are set automatically.
+
+- **Rate:** between 1.02× and 1.15× normal speed — just brisk enough to feel snappy without becoming hard to understand.
+- **Pitch:** between 1.3 and 1.45 — noticeably higher than a neutral voice, which reinforces the excited, playful tone of the game.
+
+## Screen and voice during play
+
+While a round is in progress, the app requests a **wake lock** so your screen stays on automatically — you won't need to keep tapping the screen to prevent it from going dark.
+
+On mobile browsers, the Speech Synthesis API can fall silent after a period of inactivity. To prevent this, the app sends a keep-alive signal every 7 seconds while the game is running, so narration continues reliably throughout long rounds even on devices that normally suspend audio in the background.

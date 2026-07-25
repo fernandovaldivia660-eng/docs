@@ -17,14 +17,16 @@ The table below gives the exact timing values for every pace. *Safe* and *lava* 
 | **Normal** | 5–11 s | 6–11 s | 2.0 s | Balanced; the default experience |
 | **Metrónomo** | exactly 7 s | exactly 7 s | 2.0 s | Fixed rhythm; no randomness |
 | **Volcán** | 3–7 s | 9–14 s | 1.6 s | Lava-heavy; very little rest |
-| **Marea** | ramps (see below) | ramps (see below) | 3.0 → 1.0 s | Escalating tension over the round |
+| **Marea** | 13 s → 2.5 s (ramps down) | 4 s → 14 s (ramps up) | 3.0 → 1.0 s | Escalating tension over the round |
 | **Traición** | 4–9 s | 6–12 s | 2.0 s | Adds fakes and sneak lava; 35 % fake chance, 30 % sneak chance |
 | **Caos** | 2.5–6 s | 8–15 s | 1.2 s | Brutal; maximum lava pressure |
 
 ## Marea: the escalating pace
 
-Marea (Spanish for *tide*) starts the round feeling almost as gentle as Fácil and gradually shifts to near-Volcán intensity by the time the round ends. The game interpolates both the safe window and the lava window across the full round duration, so the longer you survive, the harder things get.
+Marea (Spanish for *tide*) starts the round feeling almost as gentle as Fácil and gradually shifts to near-Volcán intensity by the time the round ends. The game interpolates both the safe window and the lava window continuously across the full round duration, so the longer you survive, the harder things get.
 
+- **Safe window** shrinks from **13 s** at the start of the round down to **2.5 s** by the end — you have far less time to rest as the round progresses.
+- **Lava window** grows from **4 s** at the start up to **14 s** by the end — the floor stays dangerous for longer and longer as the round goes on.
 - **Warn time** also ramps: it begins at **3.0 s** at round start and tightens to **1.0 s** by round end, meaning late-round warnings give you much less time to react.
 - There is no fixed crossover point — the interpolation is continuous and proportional to how far through the round you are.
 

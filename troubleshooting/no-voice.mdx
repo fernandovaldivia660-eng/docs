@@ -1,5 +1,5 @@
 ---
-title: "Fix voice not working in El Piso es Lava"
+title: "Fix voice and speech synthesis issues in El Piso es Lava"
 sidebarTitle: "No Voice"
 description: "Diagnose and fix voice and speech synthesis issues in El Piso es Lava, from silent audio to wrong language accents and error codes."
 ---
@@ -28,7 +28,7 @@ The voice referee is one of the most important parts of El Piso es Lava — it c
 
     **4. Start the game with a deliberate tap**
 
-    If Probar voz is unavailable, tapping the main **Iniciar** button also counts as the required user gesture and will unlock speech synthesis for that session.
+    If Probar voz is unavailable, tapping the main **Empezar** button also counts as the required user gesture and will unlock speech synthesis for that session.
   </Accordion>
 
   <Accordion title="The voice sounds like it's speaking the wrong language or has a weird accent">
@@ -63,7 +63,7 @@ The voice referee is one of the most important parts of El Piso es Lava — it c
         Go to **Settings** on your Android device.
       </Step>
       <Step title="Find Text-to-Speech">
-        Navigate to **General Management** → **Language and Input** → **Text-to-speech**. The exact path varies by manufacturer — search for "text-to-speech" in Settings if you can't find it.
+        Navigate to **General Management** → **Language** → **Text-to-speech**. The exact path varies by manufacturer — search for "text-to-speech" in Settings if you can't find it.
       </Step>
       <Step title="Install a Spanish engine">
         Tap the settings icon next to your TTS engine (usually Google Text-to-Speech). Tap **Install voice data**, then choose **Spanish** and download your preferred regional variant.
@@ -77,7 +77,7 @@ The voice referee is one of the most important parts of El Piso es Lava — it c
   <Accordion title="The voice starts but stops mid-sentence">
     This is a known quirk in mobile browsers. iOS and Android can suspend the speech synthesis engine when the screen dims, the browser tab loses focus, or the system decides to reclaim resources. You may hear the voice cut off abruptly mid-word.
 
-    El Piso es Lava already has a built-in workaround: it calls `speechSynthesis.resume()` automatically every 7 seconds to keep the engine alive. In most cases the voice recovers on its own within a moment.
+    El Piso es Lava already has a built-in workaround: it automatically tries to resume speech every 7 seconds to keep the engine alive. In most cases the voice recovers on its own within a moment.
 
     If the stopping is persistent or annoying, try this:
 
@@ -103,14 +103,14 @@ The voice referee is one of the most important parts of El Piso es Lava — it c
     | `canceled` | The speech queue was cleared | Harmless — happens during normal game resets |
     | `not-allowed` | The browser blocked speech because no user gesture has occurred yet | Tap **Probar voz** or tap anywhere on the page first, then try again |
     | `synthesis-failed` | The TTS engine failed to produce audio for this utterance | Try selecting a different voice in the voice settings, or toggle voice off and on |
-    | `synthesis-unavailable` | No TTS engine is available on this browser | Your browser may not support SpeechSynthesis — see the browser support guide |
+    | `synthesis-unavailable` | No TTS engine is available on this browser | Your browser does not support voice synthesis — see the browser support guide |
     | `network` | The voice engine requires a network connection and is offline | This only affects cloud-based voices; switch to an on-device voice in your system settings |
 
     After resolving the underlying cause, tap **Probar voz** to confirm the voice is working before restarting the game.
   </Accordion>
 
   <Accordion title="The voice works on desktop but not on my phone">
-    The most likely cause is that you are using **Firefox on Android**. Firefox for Android does not implement the Web Speech API (`SpeechSynthesis`), so voice is completely unavailable regardless of which voices you have installed.
+    The most likely cause is that you are using **Firefox on Android**. Firefox for Android does not support the Web Speech API, so voice is completely unavailable regardless of which voices you have installed.
 
     **Solution:** Switch to a supported mobile browser.
 
@@ -123,7 +123,7 @@ The voice referee is one of the most important parts of El Piso es Lava — it c
       </Card>
     </CardGroup>
 
-    Firefox on **desktop** does support SpeechSynthesis, so if you are testing on a computer and it works there but not on your Android phone, switching browsers is the fix.
+    Firefox on **desktop** does support voice synthesis, so if you are testing on a computer and it works there but not on your Android phone, switching browsers is the fix.
   </Accordion>
 
   <Accordion title="I'm opening the page inside another app and the voice doesn't work">

@@ -1,7 +1,7 @@
 ---
-title: "Choosing player colors for reliable tracking"
+title: "Player color guide for camera tracking — El Piso es Lava"
 sidebarTitle: "Player Colors"
-description: "See the eight assigned player colors and their hex values, learn what items to wear for reliable tracking, and troubleshoot a lost dot."
+description: "All eight player colors with hex codes and guidance on what items to wear for reliable camera tracking, plus how to fix a lost signal."
 ---
 
 When camera tracking is enabled, El Piso es Lava assigns each player a distinct color. The camera watches for that color moving across the floor grid and uses it to detect lava violations automatically. Choosing the right item to represent your color — and wearing it in the right way — makes the difference between smooth, hands-free refereeing and a dot that keeps blinking out.
@@ -10,16 +10,16 @@ When camera tracking is enabled, El Piso es Lava assigns each player a distinct 
 
 Each color has a vivid, highly saturated hue so that it stands out against typical room backgrounds and clothing.
 
-| Color name | Hex | Spanish name | Best for |
-|---|---|---|---|
-| Rosa | `#FF2D6F` | Rosa | Players with cool-toned clothing or light floors |
-| Lima | `#9BFF2D` | Lima | Stands out against dark floors and furniture |
-| Cian | `#2DE5FF` | Cian | Great contrast against wood floors and brown sofas |
-| Naranja | `#FF8A1F` | Naranja | Avoid if your sofa or rug is orange or red |
-| Morado | `#B14DFF` | Morado | Unusual hue — rarely conflicts with room decor |
-| Amarillo | `#FFE12D` | Amarillo | High visibility; avoid cream or beige floors |
-| Verde | `#12D46B` | Verde | Avoid if you have a lot of house plants in frame |
-| Azul | `#2D6BFF` | Azul | Avoid blue jeans or blue upholstery in the play area |
+| Color | Hex | Notes |
+|---|---|---|
+| Rosa | `#FF2D6F` | Works well against light floors and cool-toned clothing |
+| Lima | `#9BFF2D` | Stands out against dark floors and furniture |
+| Cian | `#2DE5FF` | Great contrast against wood floors and brown sofas |
+| Naranja | `#FF8A1F` | Avoid if your sofa or rug is orange or red |
+| Morado | `#B14DFF` | Unusual hue — rarely conflicts with room decor |
+| Amarillo | `#FFE12D` | High visibility; avoid cream or beige floors |
+| Verde | `#12D46B` | Avoid if you have a lot of house plants in frame |
+| Azul | `#2D6BFF` | Avoid blue jeans or blue upholstery in the play area |
 
 <Note>
 Your color is assigned by the app when you join the game. You cannot change it, but you can check your color on your player chip at any time.
@@ -41,9 +41,10 @@ Attach your color item to the **top of your body** — a hat, shoulder, or outst
 
 ## Saturation and brightness requirements
 
-The tracker uses HSB (hue, saturation, brightness) values internally. To register during calibration and be detected during play, your color item must meet these minimums:
+The tracker evaluates each sampled color by its hue, saturation, and brightness. To register during calibration and be detected during play, your color item must meet these minimums:
 
-- **Saturation ≥ 0.30** — pastel or washed-out shades will not pass the vivid-color check.
+- **Saturation ≥ 0.32** during calibration — pastel or washed-out shades will be rejected at the registration step.
+- **Saturation ≥ 0.30** during play — the live tracker uses a slightly relaxed threshold once you are in the game.
 - **Brightness ≥ 0.20** — very dark items (even if technically the right hue) will be rejected.
 
 If you tap your item during calibration and the app warns you that the color is too muted, try one of these fixes:
