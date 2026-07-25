@@ -1,0 +1,69 @@
+---
+title: "Sound effects in El Piso es Lava"
+sidebarTitle: "Sound Effects"
+description: "Learn how El Piso es Lava generates and controls all sound effects in-browser, what each event sounds like, and how to enable haptic feedback."
+---
+
+El Piso es Lava creates every sound effect on the fly using the Web Audio API — no audio files are downloaded to your device. This means the app works offline after its first load, starts instantly, and plays crisp, synthesized sounds that react to the exact game state in real time.
+
+## How sound effects are generated
+
+Rather than playing pre-recorded audio clips, the app runs a small synthesizer in your browser. Different waveform types — sawtooth, triangle, square, and noise — are combined and shaped to produce each distinct sound. Because everything is computed live, the sounds adapt seamlessly to different tempos and difficulty modes.
+
+<Info>
+  Browsers require at least one user interaction (a tap or click) before they allow audio to play. If you open the app and the first sound is silent, simply tap anywhere on the screen to unlock the audio context, then continue normally.
+</Info>
+
+## Sound effects reference
+
+The table below lists every sound event, when it fires, and what you'll hear.
+
+| Event | Trigger | What you hear |
+|---|---|---|
+| **lava** | The floor becomes lava | Layered sawtooth sweeps with a noise burst — dramatic and urgent |
+| **safe** | A safe period begins | Three ascending triangle tones forming a C–E–G chord |
+| **warn** | Warning before lava hits | Three short, sharp square-wave pulses — an alert signal |
+| **fake** | A fake-lava bluff (Traición mode) | Descending triangle then sine tone — a "deflation" sound |
+| **item** | An item appears (Cacería mode) | Three bright triangle notes — a short jingle |
+| **cup** | A cup or prize is awarded | Five-note ascending triangle fanfare |
+| **burn** | A player is caught on the lava | Sawtooth drop followed by a noise burst — an "ouch" hit |
+| **blip** | UI interaction feedback | Short square tone — a soft click |
+| **go** | Countdown finishes, round starts | Square wave sweeping upward — the "go" signal |
+| **end** | Game over | Four descending sawtooth tones — the game-over theme |
+
+## Toggling sound effects
+
+You can switch sound effects off without affecting the voice narration.
+
+- Tap the **🔊** icon on the play screen to toggle all sound effects on or off.
+- Your preference is saved automatically and persists between sessions.
+- The voice narration toggle (**🗣️**) is independent — you can run voice only, SFX only, both, or neither.
+
+## Haptic feedback
+
+On devices that support vibration, the app triggers a short vibration burst alongside key sound events — such as **lava**, **burn**, and **warn**. This gives players a physical cue even if the device is face-down on a table or the volume is low.
+
+Haptic feedback uses the browser Vibration API. If your device or browser does not support it, the game continues normally without any vibration.
+
+<Note>
+  For the best experience, turn your device volume up to maximum before starting a round. The synthesized effects are mixed to sound balanced at full volume, and some of the more dramatic cues (like **lava** and **end**) lose impact at low volume levels.
+</Note>
+
+## Troubleshooting sound
+
+If you're not hearing sound effects during play, work through these checks:
+
+<Steps>
+  <Step title="Confirm SFX are enabled">
+    Make sure the **🔊** icon on the play screen is active (not crossed out).
+  </Step>
+  <Step title="Check device volume">
+    Raise the media or system volume on your device. On iPhone, also confirm the silent switch is OFF.
+  </Step>
+  <Step title="Tap to unlock audio">
+    If this is your first interaction with the app, tap anywhere on the screen. Browsers block audio until a user gesture has occurred.
+  </Step>
+  <Step title="Use the test button">
+    Before starting a game, tap **Probar voz y sonido** in the settings panel. This plays a test phrase and a sound effect together so you can verify both audio channels are working.
+  </Step>
+</Steps>

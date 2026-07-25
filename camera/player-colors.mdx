@@ -1,0 +1,84 @@
+---
+title: "Choosing player colors for reliable tracking"
+sidebarTitle: "Player Colors"
+description: "See the eight assigned player colors and their hex values, learn what items to wear for reliable tracking, and troubleshoot a lost dot."
+---
+
+When camera tracking is enabled, El Piso es Lava assigns each player a distinct color. The camera watches for that color moving across the floor grid and uses it to detect lava violations automatically. Choosing the right item to represent your color — and wearing it in the right way — makes the difference between smooth, hands-free refereeing and a dot that keeps blinking out.
+
+## The eight player colors
+
+Each color has a vivid, highly saturated hue so that it stands out against typical room backgrounds and clothing.
+
+| Color name | Hex | Spanish name | Best for |
+|---|---|---|---|
+| Rosa | `#FF2D6F` | Rosa | Players with cool-toned clothing or light floors |
+| Lima | `#9BFF2D` | Lima | Stands out against dark floors and furniture |
+| Cian | `#2DE5FF` | Cian | Great contrast against wood floors and brown sofas |
+| Naranja | `#FF8A1F` | Naranja | Avoid if your sofa or rug is orange or red |
+| Morado | `#B14DFF` | Morado | Unusual hue — rarely conflicts with room decor |
+| Amarillo | `#FFE12D` | Amarillo | High visibility; avoid cream or beige floors |
+| Verde | `#12D46B` | Verde | Avoid if you have a lot of house plants in frame |
+| Azul | `#2D6BFF` | Azul | Avoid blue jeans or blue upholstery in the play area |
+
+<Note>
+Your color is assigned by the app when you join the game. You cannot change it, but you can check your color on your player chip at any time.
+</Note>
+
+## What to wear or hold
+
+The tracker needs to see a solid patch of your assigned color from above. Small or patterned items are harder to detect reliably. Here are the best options, roughly in order of how well they work:
+
+- **Strip of colored paper or cardstock** — cheap, easy to cut, works with any printer. Tape it to your shoulder, hat brim, or the back of your hand.
+- **Colored wristband or bracelet** — hold your wrist up or keep it on the side facing the camera.
+- **Solid-color sock** — pulled up to the ankle and visible from above.
+- **Sticky note on your shirt shoulder** — the bright adhesive paper works well if the color matches closely enough.
+- **Small fabric square or felt piece** — cut a 10 × 10 cm square and pin it to your collar or hat.
+
+<Tip>
+Attach your color item to the **top of your body** — a hat, shoulder, or outstretched hand. The camera looks down from above, so an item on your wrist hanging at your side may disappear when you raise your arm or turn around.
+</Tip>
+
+## Saturation and brightness requirements
+
+The tracker uses HSB (hue, saturation, brightness) values internally. To register during calibration and be detected during play, your color item must meet these minimums:
+
+- **Saturation ≥ 0.30** — pastel or washed-out shades will not pass the vivid-color check.
+- **Brightness ≥ 0.20** — very dark items (even if technically the right hue) will be rejected.
+
+If you tap your item during calibration and the app warns you that the color is too muted, try one of these fixes:
+
+1. Move to a brighter part of the room and tap again.
+2. Swap for a fresh, unbleached piece of paper in the correct color.
+3. Hold the item flat and perpendicular to the camera so it does not cast a shadow on itself.
+
+<Warning>
+**Faded pastels will not work.** A light-pink wristband for Rosa, a pale-yellow sticky note for Amarillo, or a washed-out cyan shirt will all fail the saturation check. Use new, brightly colored paper or purpose-made items.
+</Warning>
+
+## Avoiding background conflicts
+
+The tracker distinguishes player colors from each other and from the room background, but it can be confused if a background object shares the same hue as a player's color.
+
+- **Scan the room before the game.** Look for sofas, rugs, walls, or large objects in any of the eight player colors.
+- If a color in the room closely matches an assigned player color, ask the app host to manually reassign that player to a less conflicting color (if the game mode allows), or rearrange the camera angle to exclude the conflicting object.
+- A few common conflicts to watch for:
+  - **Naranja / Amarillo** — orange or yellow wood flooring, terracotta tiles.
+  - **Verde / Lima** — houseplants, green rugs, grass visible through a window.
+  - **Azul** — blue denim on non-playing bystanders, blue upholstery.
+
+## Fixing a lost player
+
+If a player's dot blinks, disappears, or their chip shows a **dim bead** during play, the tracker has lost their signal. The PiP overlay label will show **"N sin señal"** in red.
+
+Try these steps in order:
+
+1. **Check the item** — is it still visible from above? Reposition it on the shoulder or hat.
+2. **Check the lighting** — move a lamp closer or open a blind to add more light to the play area.
+3. **Re-run calibration** — open settings and restart the calibration wizard to re-sample the player's color under the current lighting.
+4. **Switch color items** — replace the faded or crumpled item with a fresh piece of brightly colored paper.
+5. **Change the color** — if the room background keeps interfering, a different player color may track more reliably in your specific space.
+
+<Info>
+Manual mode is always available as a fallback. If tracking problems persist, any player or the referee can tap a chip to deduct a life by hand — you do not need to stop the game.
+</Info>

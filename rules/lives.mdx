@@ -1,0 +1,69 @@
+---
+title: "Lives and elimination in El Piso es Lava"
+sidebarTitle: "Lives"
+description: "Learn how the lives system works, how you lose them, how camera auto-detection fires, and what happens when a player is eliminated."
+---
+
+Every round, the lives system decides how forgiving the game is. With the default setting you have a small cushion before elimination; with the stricter setting, one wrong step ends your round immediately. Understanding both modes — and the tools the referee gives you to manage them — keeps every game fair and fun.
+
+## Lives modes
+
+You choose the mode on the setup screen before tapping **Empezar**.
+
+<CardGroup cols={2}>
+  <Card title="3 vidas por jugador (ON)" icon="heart">
+    Each player starts the round with **3 lives**, shown as ♥♥♥ on their chip. Touching the floor during lava costs one life. Only when all three are gone is that player eliminated.
+  </Card>
+  <Card title="3 vidas por jugador (OFF)" icon="bolt">
+    **Instant elimination** — one touch of the floor during lava and you're out, no second chances. Rounds tend to be shorter and more intense.
+  </Card>
+</CardGroup>
+
+## How you lose a life
+
+A life is deducted whenever the referee detects that you touched the floor while lava is active. There are two ways this can happen.
+
+### Manual tap
+
+During the lava phase, any player (or a dedicated referee) can tap a player's chip on screen to manually remove one life. Use this when the camera misses something obvious or when you're playing without camera detection.
+
+### Camera auto-detection
+
+When camera mode is enabled, the app watches each player's assigned colour. If it spots that colour on an unmarked floor cell for **0.45 seconds or longer**, it automatically deducts a life. A cooldown of **2.5 seconds** then applies before that same player can lose another life through auto-detection, so a single stumble doesn't chain into multiple deductions.
+
+<Info>
+  Auto-detection only triggers on **floor** cells — areas you've marked as safe (furniture, cushions, raised platforms) are excluded from scanning.
+</Info>
+
+## Undoing a life deduction
+
+Mistakes happen. If a life was deducted in error — whether by an accidental tap or a camera false-positive — tap the **↩ undo** button in the controls bar immediately. It reverses the most recent deduction and restores the life to the affected player.
+
+<Warning>
+  The undo button only reverses the **last** deduction. If two lives were lost in quick succession, you'll need to tap ↩ twice to undo both, in reverse order.
+</Warning>
+
+## Elimination
+
+When a player's life count reaches zero, the referee marks them as eliminated: their chip grays out on screen and the voice announcer calls them out. Eliminated players step aside — they can no longer lose lives or affect the round outcome.
+
+<Note>
+  In instant-elimination mode (toggle OFF), the chip grays out after the very first floor touch, since there are no intermediate lives to drain.
+</Note>
+
+## When a round ends early
+
+The referee doesn't wait for time to expire if players are dropping out.
+
+- As soon as only **one player remains** (when the round started with two or more), the round ends immediately.
+- That last surviving player is declared the **round winner** and the result screen appears.
+
+If all remaining players are eliminated at the same moment, the round is called as a draw.
+
+## Special case: Pasa la copa
+
+In **Pasa la copa** (hot-potato) mode the floor isn't the only danger. When lava hits, the player **currently holding the cup** loses a life — regardless of where they are standing. Keep the cup moving or you'll be the one paying the price.
+
+<Tip>
+  In Pasa la copa, focus less on your feet and more on whose hands hold the cup the moment the announcer calls lava. Passing early can save you a life.
+</Tip>

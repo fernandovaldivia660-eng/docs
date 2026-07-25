@@ -1,47 +1,47 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Get started with El Piso es Lava"
+sidebarTitle: "Quick Start"
+description: "Open the file, add your players, choose an objective, and launch your first lava round — everything you need to play in under two minutes."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
-
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
-
-## Prerequisites
-
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
-
-<Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
-  </Step>
-</Steps>
+Getting your first game running takes less than two minutes. You do not need to create an account, install anything, or connect to a server — just open one file and follow the steps below.
 
 <Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
-
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+  Before you start, prop your phone or tablet up so everyone can see the screen, and turn the device volume to maximum. The Spanish voice announcer is a big part of the atmosphere, so the louder the better.
 </Tip>
+
+<Warning>
+  On iPhone, check that the **mute switch on the side of your device is OFF** (no orange showing). iOS will silence the voice announcer completely if the mute switch is engaged, even if your volume is at full.
+</Warning>
+
+## Steps
+
+<Steps>
+  <Step title="Open the file in Safari or Chrome">
+    Locate the `el-piso-es-lava.html` file and open it in **Safari** or **Chrome**. Both browsers are fully supported. If you plan to use the camera or voice announcer, the file must be opened either as a local file (`file://`) or served over **HTTPS** — a plain `http://` address will block those features.
+  </Step>
+
+  <Step title="Add your players">
+    On the setup screen, enter the name of each player (2–8 players supported) and tap the **+** button to add them. As each player is added, the app assigns them a unique color from the set: Rosa, Lima, Cian, Naranja, Morado, Amarillo, Verde, and Azul. Make sure every player holds or wears something in their assigned color so the announcer and camera can identify them during play.
+  </Step>
+
+  <Step title="Choose an objective and difficulty">
+    Select one of the seven **objectives** to define the win condition for the session — see [Objectives](/modes/objectives) for a full description of each. Then set a **difficulty** (Ritmo de la lava) that controls how quickly lava phases arrive — see [Difficulty](/modes/difficulty) for details. You can also adjust the round duration under [Round Length](/modes/round-length).
+  </Step>
+
+  <Step title="Enable camera tracking (optional)">
+    Toggle on **Seguimiento por cámara** if you want the app to automatically detect when a player's color appears on the floor during a lava phase. After enabling the toggle, tap **Calibrar** and follow the on-screen prompts to teach the camera what the floor looks like. See [Camera Overview](/camera/overview) for full setup instructions.
+  </Step>
+
+  <Step title="Tap Empezar">
+    When you are satisfied with your settings, tap **Empezar**. A countdown runs, the Spanish voice announcer sets the mood, and the game begins. The screen stays on automatically — the app uses a wake lock so your device does not go to sleep mid-round.
+  </Step>
+
+  <Step title="Call lava violations during play">
+    The announcer cycles through **safe → warn → lava** phases. When lava is active, watch the floor. If a player touches the floor, tap their color chip on the screen to record a strike. Made a mistake? Tap the chip again immediately to undo the last strike.
+  </Step>
+
+  <Step title="End the round and continue">
+    When the round timer expires, the app displays the current scores for all players. From here you can tap **Siguiente ronda** to play another round with the same settings, or tap **Terminar partida** to end the session and see the final results.
+  </Step>
+</Steps>

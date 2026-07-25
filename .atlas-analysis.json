@@ -1,0 +1,95 @@
+{
+  "projectType": "saas",
+  "projectName": "El Piso es Lava",
+  "projectDescription": "A web-based party game referee that uses voice announcements and optional camera tracking to run The Floor is Lava rounds for 2–8 players.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "How to Play",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "setup"
+            ]
+          },
+          {
+            "group": "Game Modes",
+            "pages": [
+              "modes/objectives",
+              "modes/difficulty",
+              "modes/round-length"
+            ]
+          },
+          {
+            "group": "Camera Tracking",
+            "pages": [
+              "camera/overview",
+              "camera/calibration",
+              "camera/player-colors"
+            ]
+          },
+          {
+            "group": "Rules & Scoring",
+            "pages": [
+              "rules/lives",
+              "rules/scoring",
+              "rules/round-flow"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Settings",
+            "pages": [
+              "reference/voice",
+              "reference/sound-effects",
+              "reference/pace-guide"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/no-voice",
+              "troubleshooting/camera-denied",
+              "troubleshooting/browser-support"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Spanish voice announcer with selectable TTS voice",
+    "7 game objectives including cup grab, hot potato, scavenger hunt, and survival",
+    "8 difficulty paces from Siesta (gentle) to Caos (brutal)",
+    "Optional camera tracking detects player colors, cup grabs, and lava floor violations",
+    "2–8 players with color-coded chips",
+    "3-lives system or instant-elimination mode",
+    "Pre-lava warning announcements and fake-out phases (Traición mode)",
+    "Multi-round sessions with scoreboard",
+    "Works offline as a standalone HTML file"
+  ],
+  "publicApiSurface": [
+    "Setup screen: player names, color swatches, objective selector, difficulty selector, duration selector",
+    "Voice selector: Spanish TTS voice chooser with test button",
+    "Camera calibration: 4-step flow (frame room → mark safe zones → register player colors → register cup)",
+    "Play screen: phase display (safe / warn / fake / lava), countdown clock, action buttons, player chips",
+    "Burn player: tap a player chip to deduct a life during lava phase",
+    "Undo burn: revert the last life deduction",
+    "Pause/resume: freeze the round timer and voice",
+    "End round: show results, leaderboard, next round or finish game",
+    "Objectives: copa, vuelta, cacería, papa, estatuas, cadena, supervivencia",
+    "Difficulty paces: siesta, fácil, normal, metrónomo, volcán, marea, traición, caos",
+    "Round durations: 45s, 1:30, 2:30, 4min, 6min, unlimited"
+  ]
+}

@@ -1,0 +1,66 @@
+---
+title: "Camera tracking in El Piso es Lava"
+sidebarTitle: "Overview"
+description: "Learn how the optional camera turns your phone into an automatic lava referee — tracking violations, steps, and cup grabs with no server or AI required."
+---
+
+El Piso es Lava can use your device's camera to referee the game without anyone lifting a finger. When camera tracking is on, the app watches the play area in real time, spots when a player steps on unmarked floor (lava), and even notices when someone grabs the cup — all through simple color-blob detection that runs entirely on your device.
+
+## What camera tracking does
+
+Camera tracking handles three jobs automatically:
+
+- **Lava violations** — If your assigned color appears on an unmarked floor cell for 0.45 seconds, you lose a life. A 2.5-second cooldown prevents the same step from being counted twice.
+- **Safe zone awareness** — Cells you mark as safe (sofas, cushions, chairs) are never flagged, so you can safely stand on furniture.
+- **Cup grabs** — When the cup moves more than 11 % of the frame width away from its starting position, the app fires the *grabbed* event automatically.
+
+<Note>
+All processing happens locally in your browser. No video is sent to any server, and no machine-learning model is involved — only fast, lightweight color-blob detection.
+</Note>
+
+## What you need
+
+To use camera tracking you need:
+
+- A **modern browser** (Chrome, Safari, Firefox, Edge) with camera permission granted.
+- The page served over **HTTPS** or opened directly as a local file — browsers block camera access on plain HTTP.
+- A **rear-facing camera** is preferred for a top-down view of the room (you can switch to front camera during calibration).
+- **Good lighting** — bright, even light lets the tracker reliably find each player's color.
+- **Vibrant, solid-color items** for each player to wear or hold (bracelet, sock, paper strip).
+
+<Warning>
+If you open El Piso es Lava inside an **iframe** — for example embedded in another site — the browser will block camera access regardless of permissions. Open the app directly in its own tab.
+</Warning>
+
+## The Picture-in-Picture overlay
+
+While the game is running, a small Picture-in-Picture (PiP) overlay shows the live camera feed so you can keep an eye on tracking without leaving the main game screen. Inside the overlay:
+
+- A **colored dot** appears for each player at their detected position.
+- A **gold circle** marks the cup's tracked position.
+- The label **"Rastreando"** confirms that tracking is working correctly.
+- If a player goes undetected, their chip on the main screen shows a **dim bead**, and the PiP label switches to **"N sin señal"** in red (where *N* is the number of lost players).
+
+If you see the "sin señal" warning, ask the affected player to hold their color item more visibly or move to a better-lit area.
+
+## Camera vs. manual mode
+
+Camera tracking is entirely optional. A manual tap is always available as a fallback — any player or the referee can tap a player's chip to subtract a life by hand.
+
+| Situation | Recommendation |
+|---|---|
+| Well-lit room, players have vivid color items | Use camera tracking for hands-free refereeing |
+| Dim room or no vibrant colors available | Use manual mode and tap chips to deduct lives |
+| Embedded in an iframe or on plain HTTP | Camera unavailable — use manual mode |
+| Quick game with young children | Manual mode is simpler to set up |
+
+## Get started
+
+<CardGroup cols={2}>
+  <Card title="Calibration" icon="sliders" href="/camera/calibration">
+    Walk through the four-step setup wizard to frame the room, mark safe zones, and register every player's color.
+  </Card>
+  <Card title="Player Colors" icon="palette" href="/camera/player-colors">
+    See the eight assigned colors, learn what items work best, and troubleshoot tracking problems.
+  </Card>
+</CardGroup>

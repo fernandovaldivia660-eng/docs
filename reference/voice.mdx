@@ -1,0 +1,112 @@
+---
+title: "Voice settings and Spanish TTS configuration"
+sidebarTitle: "Voice"
+description: "Configure the Spanish text-to-speech voice in El Piso es Lava, install voices on iOS and Android, and control narration during play."
+---
+
+El Piso es Lava uses your browser's built-in Speech Synthesis API to narrate the game in Spanish. Choosing the right voice makes the experience more immersive, and installing a high-quality Spanish voice on your device ensures you hear every countdown and warning clearly.
+
+## How the voice selector works
+
+When you open the voice settings panel, you'll see a dropdown list of all voices available on your device. The list is organized into two groups:
+
+- **Spanish voices** — shown at the top, sorted by quality preference.
+- **Otros idiomas (acento raro)** — all remaining voices, listed below a divider. These can still speak Spanish, but they may sound accented or robotic.
+
+Within the Spanish voices group, the app automatically prefers voices in this order:
+
+1. A voice with a female name
+2. A Google-branded voice (e.g., *Google español*)
+3. A voice with an `es-MX`, `es-ES`, or `es-US` locale
+4. Any other voice tagged as Spanish
+5. Your device's system default (fallback)
+
+<Tip>
+  Google TTS voices (labeled *Google español* or similar) tend to sound noticeably more natural and expressive than the built-in system voices. If you see one in the list, it's worth selecting it first.
+</Tip>
+
+## Picking the best voice
+
+Open the voice selector before your first game and work through this checklist:
+
+<Steps>
+  <Step title="Open voice settings">
+    Tap the settings icon and locate the **Voz** (voice) dropdown.
+  </Step>
+  <Step title="Choose a Spanish voice from the top group">
+    Select any voice in the Spanish section. Female voices and Google voices typically sound the most natural for game narration.
+  </Step>
+  <Step title="Test the voice">
+    Tap **Probar voz y sonido**. The app plays a short test phrase followed by a sound effect so you can judge both the voice tone and the device volume at the same time.
+  </Step>
+  <Step title="Adjust if needed">
+    If the voice sounds wrong — too robotic, wrong language, or silent — try a different entry in the list or install a Spanish voice following the steps below.
+  </Step>
+</Steps>
+
+## Installing a Spanish voice
+
+If the Spanish voices group is empty or only shows a fallback device default, you need to install a Spanish voice at the operating-system level. The app cannot install voices for you, but the process is straightforward on both major platforms.
+
+<CardGroup cols={2}>
+  <Card title="iPhone / iPad" icon="apple">
+    <Steps>
+      <Step title="Open Settings">
+        Go to **Settings** on your device.
+      </Step>
+      <Step title="Accessibility → Spoken Content">
+        Tap **Accessibility**, then **Spoken Content**.
+      </Step>
+      <Step title="Open Voices">
+        Tap **Voices** to see the language list.
+      </Step>
+      <Step title="Select Spanish">
+        Tap **Spanish** (Español) and choose a regional variant, such as *Spanish (Mexico)* or *Spanish (Spain)*.
+      </Step>
+      <Step title="Download a voice">
+        Tap any listed voice and then tap the download icon ⬇️ next to it. Enhanced voices take a moment to download over Wi-Fi.
+      </Step>
+      <Step title="Reload the app">
+        Return to El Piso es Lava and refresh the page. The new voice will appear in the selector.
+      </Step>
+    </Steps>
+  </Card>
+  <Card title="Android" icon="android">
+    <Steps>
+      <Step title="Open Settings">
+        Go to **Settings** on your device.
+      </Step>
+      <Step title="General Management → Language">
+        Tap **General Management** (on Samsung) or **System**, then **Language & input**.
+      </Step>
+      <Step title="Text-to-speech output">
+        Tap **Text-to-speech output** (or **Text-to-speech**).
+      </Step>
+      <Step title="Open engine settings">
+        Tap the gear icon ⚙️ next to your preferred TTS engine (usually Google TTS).
+      </Step>
+      <Step title="Install Spanish language data">
+        Tap **Install voice data**, choose **Spanish**, and download the language pack.
+      </Step>
+      <Step title="Reload the app">
+        Return to El Piso es Lava and refresh the page. Spanish voices will now appear at the top of the selector.
+      </Step>
+    </Steps>
+  </Card>
+</CardGroup>
+
+## Toggling voice during play
+
+Once the game is running, you can turn narration on or off at any time without interrupting the round.
+
+- Tap the **🗣️** icon in the play screen to toggle the voice on or off.
+- When you pause the game, any speech currently in progress is cancelled immediately so the voice doesn't keep talking over the pause screen.
+- Your toggle preference is saved automatically, so it persists the next time you open the app.
+
+<Note>
+  On iPhone, the physical **mute / silent switch** on the side of the device must be in the **OFF** (unmuted) position. Even if your system volume is turned up, iOS silences Speech Synthesis when the silent switch is active, so you'll hear nothing during play.
+</Note>
+
+## Voice rate and pitch
+
+The app intentionally speaks slightly faster and at a higher pitch than the system default — this adds energy and urgency to the narration that suits the pace of the game. You do not need to adjust these values manually; they are tuned per difficulty mode and applied automatically.

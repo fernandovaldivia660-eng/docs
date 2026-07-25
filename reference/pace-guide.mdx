@@ -1,0 +1,66 @@
+---
+title: "Complete pace reference for all 8 difficulty modes"
+sidebarTitle: "Pace Guide"
+description: "Exact timing values, lava and safe windows, and warn intervals for every difficulty mode in El Piso es Lava, plus recommendations by group."
+---
+
+El Piso es Lava offers eight difficulty modes — called *paces* — that control how long safe windows last, how long lava periods run, and how much warning you get before the floor turns dangerous. Picking the right pace for your group is the single biggest factor in how tense and enjoyable the game feels.
+
+## Full pace reference table
+
+The table below gives the exact timing values for every pace. *Safe* and *lava* values are ranges; the game picks a random duration within that range each time. *Warn* is the fixed lead time before a lava event triggers.
+
+| Pace | Safe window | Lava window | Warn time | Notes |
+|---|---|---|---|---|
+| **Siesta** | 13–20 s | 3–5 s | 4.0 s | Gentlest mode; lava is brief |
+| **Fácil** | 9–15 s | 5–8 s | 3.0 s | Relaxed; good for warm-ups |
+| **Normal** | 5–11 s | 6–11 s | 2.0 s | Balanced; the default experience |
+| **Metrónomo** | exactly 7 s | exactly 7 s | 2.0 s | Fixed rhythm; no randomness |
+| **Volcán** | 3–7 s | 9–14 s | 1.6 s | Lava-heavy; very little rest |
+| **Marea** | ramps (see below) | ramps (see below) | 3.0 → 1.0 s | Escalating tension over the round |
+| **Traición** | 4–9 s | 6–12 s | 2.0 s | Adds fakes and sneak lava; 35 % fake chance, 30 % sneak chance |
+| **Caos** | 2.5–6 s | 8–15 s | 1.2 s | Brutal; maximum lava pressure |
+
+## Marea: the escalating pace
+
+Marea (Spanish for *tide*) starts the round feeling almost as gentle as Fácil and gradually shifts to near-Volcán intensity by the time the round ends. The game interpolates both the safe window and the lava window across the full round duration, so the longer you survive, the harder things get.
+
+- **Warn time** also ramps: it begins at **3.0 s** at round start and tightens to **1.0 s** by round end, meaning late-round warnings give you much less time to react.
+- There is no fixed crossover point — the interpolation is continuous and proportional to how far through the round you are.
+
+Use Marea when you want a dramatic arc: a gentle start that lures players into a false sense of security before the pressure mounts in the final stretch.
+
+## Traición: fakes and sneak lava
+
+Traición (Spanish for *betrayal*) runs on Normal-adjacent timings but layers in two psychological tricks:
+
+- **Fake lava (35 % chance):** When a lava event is scheduled, there is a 35 % probability it turns out to be a bluff. The warn sound plays, players panic and jump — then nothing happens and the safe period resumes. The **fake** sound effect fires to signal the false alarm.
+- **Sneak lava (30 % chance):** Some lava events skip the warning entirely and arrive with no advance notice. The floor just turns dangerous without the usual lead time.
+
+These mechanics reward players who stay alert rather than simply reacting to the warn sound. Jumping every time you hear a warning will sometimes waste energy on a fake; waiting to confirm will sometimes catch you off guard.
+
+## Recommendations by player group
+
+<CardGroup cols={3}>
+  <Card title="Young children (under 7)" icon="face-smile">
+    Start with **Siesta**. The long safe windows (13–20 s) give kids plenty of time to find furniture and celebrate, and the short lava bursts (3–5 s) mean they're never trapped for long. The generous 4-second warn time ensures everyone hears the alert.
+  </Card>
+  <Card title="Casual players and families" icon="users">
+    **Fácil** or **Normal** work well for mixed-age groups. Fácil keeps the energy light for players who are new to the game. Normal is the balanced sweet spot for most living-room sessions. **Metrónomo** is a fun variant for groups who want a predictable, rhythmic challenge.
+  </Card>
+  <Card title="Competitive and experienced players" icon="trophy">
+    **Volcán**, **Caos**, and **Traición** are built for experienced groups who want real pressure. Try **Marea** for a single-round dramatic arc, or **Traición** when your group starts anticipating the patterns in other modes. **Caos** is the hardest raw test of reflexes.
+  </Card>
+</CardGroup>
+
+## Choosing a pace mid-session
+
+You can change the pace between rounds without restarting the app. Your selection is saved automatically, so if you close the browser and return later the same pace will be active. Start conservative and work your way up — jumping straight to Caos or Volcán can overwhelm new players before they've learned the rhythm of the game.
+
+<Tip>
+  If your group finds Normal too easy but Volcán too punishing, try **Traición** instead. The fake and sneak mechanics increase difficulty without simply shortening the safe windows, which makes the game feel more strategic rather than just faster.
+</Tip>
+
+<Warning>
+  **Caos** is genuinely brutal. Safe windows as short as 2.5 seconds and warn times of only 1.2 seconds leave almost no margin for error. Make sure players have clear, unobstructed paths to safe zones before starting a round at this pace.
+</Warning>

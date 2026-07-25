@@ -1,0 +1,126 @@
+---
+title: "Browser and device compatibility for El Piso es Lava"
+sidebarTitle: "Browser Support"
+description: "Full compatibility table for El Piso es Lava across browsers and devices, including voice, camera, Wake Lock, and minimum version requirements."
+---
+
+El Piso es Lava is a single HTML file that runs entirely in the browser — no install, no app store. Most modern browsers support all of its features, but a few combinations have important limitations worth knowing before your party starts. This page covers every browser and device combination, what works, what does not, and how to get the best experience.
+
+<Tip>
+  The single best thing you can do for a smooth experience is to **download the HTML file and open it directly in Safari (iPhone) or Chrome (Android)**. Avoid opening it from inside another app or from a plain `http://` link.
+</Tip>
+
+## Recommended browsers
+
+| Browser | Platform | Voice 🗣️ | Camera 📷 | Wake Lock 🔆 | Notes |
+|---|---|---|---|---|---|
+| **Safari** | iPhone / iPad | ✅ | ✅ HTTPS or `file://` | ✅ 16.4+ | Best iOS experience |
+| **Chrome** | Android | ✅ | ✅ | ✅ | Best Android experience |
+| **Chrome** | Desktop | ✅ | ✅ | ✅ | |
+| **Edge** | Desktop | ✅ | ✅ | ✅ | |
+| **Samsung Internet** | Android | ✅ | ✅ | ✅ | Great alternative on Samsung devices |
+| **Firefox** | Desktop | ✅ | ✅ | ❌ | Wake Lock not supported; screen may dim |
+| **Firefox** | Android | ❌ | ✅ | ❌ | **No voice support** — use Chrome instead |
+
+<Warning>
+  **Firefox on Android does not support the Web Speech API.** The voice referee will be completely silent. Switch to Chrome or Samsung Internet for voice to work.
+</Warning>
+
+---
+
+## Minimum version requirements
+
+Each browser feature has a minimum version below which it will not function. If you are on an older device that cannot update its browser, check this table.
+
+| Feature | Safari | Chrome | Firefox | Edge | Samsung Internet |
+|---|---|---|---|---|---|
+| Voice (SpeechSynthesis) | 7+ | 33+ | 49+ desktop only | 14+ | 4+ |
+| Camera (getUserMedia) | 11+ | 47+ | 36+ | 12+ | 5+ |
+| Wake Lock (screen-on) | 16.4+ | 84+ | ❌ not supported | 84+ | 14.0+ |
+| Web Audio API | 6+ | 14+ | 25+ | 12+ | 4+ |
+| **Recommended minimum** | **iOS 14.5 / Safari 14** | **v89+** | **v100+ (desktop)** | **v89+** | **v14+** |
+
+<Note>
+  If your device cannot install a browser version that meets these minimums, you can still play using manual tap mode. Voice and camera are enhancements — the core game always works.
+</Note>
+
+---
+
+## Opening from a file vs. opening over HTTPS
+
+El Piso es Lava is distributed as a single `.html` file. How you open that file affects which features are available.
+
+### Opening directly from local storage (`file://`)
+
+When you download the file and open it from your device's file system, the browser treats it as a `file://` URL.
+
+<CardGroup cols={2}>
+  <Card title="Safari on iPhone/iPad" icon="apple">
+    Opening from `file://` is fully supported. Voice, camera, and Wake Lock all work. This is the recommended way to run the game on iOS.
+  </Card>
+  <Card title="Chrome on Android or desktop" icon="chrome">
+    Voice and Wake Lock work from `file://`. However, Chrome may block `getUserMedia` (camera) on `file://` URLs. If the camera does not start, serve the file over `localhost` instead, or use Safari.
+  </Card>
+</CardGroup>
+
+### Opening over HTTPS
+
+If the file is hosted on a web server with a valid SSL certificate (`https://`), all features work in all supported browsers. This is the setup you get when accessing the game from an official hosted link.
+
+### Opening over plain HTTP
+
+Plain `http://` (without the **s**) is **not a secure context**. The camera will be blocked in all browsers. Voice may still work, but camera will never be granted. If you are self-hosting, always use HTTPS or serve over `localhost`.
+
+---
+
+## Using Wake Lock (keeping the screen on)
+
+Wake Lock prevents your device's screen from dimming during the game, so you do not lose track of the countdown when you set your phone down in the middle of the room.
+
+- **Chrome 84+ and Edge 84+**: Wake Lock is supported and enabled automatically.
+- **Safari 16.4+ (iOS 16.4+ / macOS 13.3+)**: Wake Lock is supported.
+- **Firefox (all platforms)**: Wake Lock is not supported. Your screen will dim according to your device's auto-lock setting. Go to **Settings → Display** and temporarily set auto-lock to "Never" before playing.
+- **Older Safari (below 16.4)**: Wake Lock is not supported. Same workaround as Firefox — disable auto-lock in system settings while playing.
+
+---
+
+## Avoiding in-app browsers and iframes
+
+Many messaging and social media apps (WhatsApp, Instagram, Telegram, TikTok, Twitter/X) open links in their own built-in browser rather than sending you to Safari or Chrome. These built-in browsers are called **in-app browsers** or **webviews**, and they run El Piso es Lava inside an iframe-like environment.
+
+El Piso es Lava detects this and displays a warning banner. In this context:
+
+- **Camera is blocked** — iframes cannot request `getUserMedia`.
+- **Voice may be blocked** — some webviews restrict the Web Speech API.
+- **Wake Lock is blocked** — not available inside iframes.
+
+<Steps>
+  <Step title="Download the file">
+    Save the `.html` file to your device storage — iPhone Files app or Android Downloads folder.
+  </Step>
+  <Step title="Open it in a real browser">
+    On iPhone, tap the file in the Files app to open it in Safari. On Android, tap it in Downloads to open it in Chrome. This gives you a full, unrestricted browser tab.
+  </Step>
+  <Step title="Add to home screen (optional)">
+    In Safari, tap **Share → Add to Home Screen**. In Chrome, tap the three-dot menu → **Add to Home screen**. This creates a shortcut so you never accidentally open it in an in-app browser again.
+  </Step>
+</Steps>
+
+---
+
+## Quick recommendation by device
+
+<CardGroup cols={2}>
+  <Card title="iPhone or iPad" icon="apple">
+    Download the file → open in **Safari**. If you are on iOS 14.5 or newer, everything works out of the box. Make sure your mute switch is off.
+  </Card>
+  <Card title="Android phone" icon="android">
+    Download the file → open in **Chrome**. If your device is a Samsung, **Samsung Internet** is an equally good choice and may already be your default browser.
+  </Card>
+  <Card title="Windows or Mac desktop" icon="desktop">
+    Open the file in **Chrome** or **Edge**. Both support all features. Firefox works for everything except Wake Lock.
+  </Card>
+  <Card title="Any device, minimal setup" icon="bolt">
+    If you cannot get voice or camera working, just open the file in any browser and play in **manual tap mode**. No permissions, no HTTPS, no minimum version needed.
+  </Card>
+</CardGroup>

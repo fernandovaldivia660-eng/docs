@@ -1,0 +1,136 @@
+---
+title: "Fix camera permission errors in El Piso es Lava"
+sidebarTitle: "Camera Errors"
+description: "Resolve camera permission denials, HTTPS errors, and device conflicts in El Piso es Lava, plus how to play without a camera at all."
+---
+
+El Piso es Lava can use your device's camera to detect when a player touches the floor — but the camera is entirely optional. If you run into a camera error, the sections below walk you through every common cause and fix. And if you just want to skip the camera entirely, scroll to the bottom to learn about manual mode.
+
+<Info>
+  The camera is **completely optional**. If you cannot get it working, or simply prefer not to use it, you can track every player manually by tapping their chip on screen. The game is just as fun without it.
+</Info>
+
+## Permission denied
+
+This error appears as `NotAllowedError` or `PermissionDeniedError` in the status area. It means you previously tapped **Block** when the browser asked for camera access, or the browser's saved permission for this page is set to denied.
+
+<Steps>
+  <Step title="Open the permission settings in Safari (iPhone/iPad)">
+    Tap the **aA** menu in the Safari address bar, then tap **Website Settings**. Find **Camera** and change it from **Deny** to **Allow**. Alternatively, go to **Settings → Safari → Camera** and set it to **Allow**.
+  </Step>
+  <Step title="Open the permission settings in Chrome (Android)">
+    Tap the **lock icon 🔒** in the address bar at the top of the Chrome window. Tap **Permissions**, then tap **Camera**, and switch it to **Allow**.
+  </Step>
+  <Step title="Open the permission settings in Chrome (desktop)">
+    Click the **lock icon 🔒** to the left of the URL. Click **Site settings**, find **Camera** under Permissions, and change the dropdown to **Allow**.
+  </Step>
+  <Step title="Tap 'Intentar de nuevo'">
+    After updating the permission, return to El Piso es Lava and tap the **Intentar de nuevo** button that appears in the camera panel. The page does not need a full reload — this button re-requests camera access with your updated permission applied.
+  </Step>
+</Steps>
+
+<Note>
+  If you do not see a lock icon, you may be on a plain `http://` address. See the **Not on HTTPS** section below — that is a separate issue.
+</Note>
+
+---
+
+## Not on HTTPS
+
+This error appears as `SecurityError` or the camera panel may simply fail silently. Browsers require a **secure context** to access the camera. A secure context means either:
+
+- the page is served over **HTTPS** (`https://`), or
+- the page is opened directly from a local file (`file://`).
+
+Plain `http://` addresses are not secure contexts and the browser will refuse camera access entirely.
+
+<Steps>
+  <Step title="Check your address bar">
+    Look at the URL. If it starts with `http://` (no **s**) and is not a `localhost` address, the camera will never work from there.
+  </Step>
+  <Step title="Download and open the file directly">
+    The simplest fix is to **download the El Piso es Lava `.html` file** to your device and open it from your local storage. On iPhone, opening a local `.html` file in Safari is treated as a secure context and the camera works immediately — no server required.
+  </Step>
+  <Step title="Use localhost if you prefer a server">
+    If you are running a local web server, make sure you access the page via `http://localhost` (not your network IP like `http://192.168.x.x`). Localhost is treated as secure. On Chrome over a network IP, camera will still be blocked unless you use HTTPS.
+  </Step>
+  <Step title="Fall back to manual mode">
+    If none of the above is practical for your situation, simply close the camera panel and play in manual tap mode. All players are tracked by tapping their chip — no camera needed.
+  </Step>
+</Steps>
+
+---
+
+## Camera already in use
+
+This error appears as `NotReadableError` or `TrackStartError`. It means another app or browser tab currently has exclusive control of the camera hardware. Only one app can use the camera at a time on most mobile devices.
+
+<Steps>
+  <Step title="Identify the conflicting app">
+    Common culprits are FaceTime, Snapchat, Instagram, TikTok, the native Camera app, video calling apps like Zoom or Teams, and other browser tabs that have camera access open.
+  </Step>
+  <Step title="Close the conflicting app">
+    Swipe it away in the app switcher (double-tap Home or swipe up from the bottom on iPhone; use the recents button on Android). Do not just background it — swipe it fully closed.
+  </Step>
+  <Step title="Tap 'Intentar de nuevo'">
+    Once the other app is closed, return to El Piso es Lava and tap **Intentar de nuevo** to re-request the camera.
+  </Step>
+</Steps>
+
+---
+
+## No camera found
+
+This error appears as `NotFoundError`. It means the browser could not find any camera device to connect to. This happens in a few situations:
+
+- You are on a desktop or laptop without a webcam.
+- You are on a device where the camera hardware is not exposed to the browser (some kiosk or managed devices).
+- A hardware fault is preventing the camera from being detected.
+
+<Steps>
+  <Step title="Confirm your device has a camera">
+    Try opening the native Camera app. If it does not work there either, it is a hardware or system-level issue unrelated to El Piso es Lava.
+  </Step>
+  <Step title="Switch to manual tap mode">
+    Tap the camera toggle to disable camera mode. Every player chip on screen is tappable — when a player touches the floor, tap their chip to eliminate them. The game works exactly the same way.
+  </Step>
+</Steps>
+
+---
+
+## Inside an iframe or in-app browser
+
+If you opened El Piso es Lava from a link inside WhatsApp, Instagram, Telegram, or any other app that uses an embedded browser, you are likely running inside an **iframe or webview**. El Piso es Lava detects this and shows a warning banner.
+
+Embedded browsers block camera access as a security policy. The app cannot request an exemption from inside an iframe.
+
+<Steps>
+  <Step title="Download the HTML file">
+    Save the El Piso es Lava `.html` file to your device's storage (iPhone: Files app; Android: Downloads folder).
+  </Step>
+  <Step title="Open it directly in Safari or Chrome">
+    On iPhone, locate the file in the Files app and tap it — it will open in Safari. On Android, open your Downloads folder and tap the file to open it in Chrome.
+  </Step>
+  <Step title="Confirm the warning banner is gone">
+    When opened directly in a proper browser tab, the iframe banner disappears. Tap **Intentar de nuevo** in the camera panel to start the camera.
+  </Step>
+</Steps>
+
+<Tip>
+  **Bookmark it.** After opening the file directly in Safari or Chrome, add it to your home screen or bookmarks so you always open it the right way next time — no more in-app browser detours.
+</Tip>
+
+---
+
+## Playing without a camera
+
+You do not need a camera to enjoy El Piso es Lava. The game was designed so that manual tap mode is a first-class experience.
+
+<CardGroup cols={2}>
+  <Card title="Tap to eliminate" icon="hand-pointer">
+    When a player touches the floor, tap their chip on screen. They are instantly marked as out and the voice announces their elimination.
+  </Card>
+  <Card title="No setup needed" icon="bolt">
+    Manual mode requires no permissions, no HTTPS, and works in every browser — even Firefox on Android. Just open the file and play.
+  </Card>
+</CardGroup>

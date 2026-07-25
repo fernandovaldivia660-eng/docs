@@ -1,0 +1,118 @@
+---
+title: "Round flow and phase cycle explained"
+sidebarTitle: "Round Flow"
+description: "Follow a round from the setup screen to the result screen, including the lava phase cycle, Traición surprises, and in-game controls."
+---
+
+Every round of El Piso es Lava follows the same lifecycle, but no two rounds feel identical. The phase cycle keeps players guessing, Traición mode throws in fake-outs and sneak attacks, and the in-game controls let you manage the action without breaking the flow. Here's everything that happens from the moment you tap **Empezar** to the moment the final score appears.
+
+## Full round lifecycle
+
+<Steps>
+  <Step title="Setup screen">
+    Configure the round: choose your objective, set the pace, toggle **3 vidas por jugador**, enable or disable Traición mode, and add or remove players. When everything looks right, tap **Empezar**.
+  </Step>
+  <Step title="Countdown">
+    The voice announcer counts down **3 — 2 — 1 — ¡YA!** while the screen counts down visually. Use these seconds to get into position — the first phase starts the instant the countdown ends.
+  </Step>
+  <Step title="Voice announces the objective">
+    Right after ¡YA!, the announcer calls out the objective so every player knows exactly what they're playing for this round.
+  </Step>
+  <Step title="Phase cycle begins">
+    Safe and lava phases alternate repeatedly until the timer expires or a win condition is met. See the phase cycle diagram below for the full breakdown.
+  </Step>
+  <Step title="Ten-second warning">
+    When **10 seconds** remain on the clock, the voice says **¡Diez segundos!** — a cue to push hard for a last-second win or protect your lives.
+  </Step>
+  <Step title="Round ends">
+    Time expires (or a cup/survival win condition is triggered) and the referee calls **endRound**. The result screen appears automatically.
+  </Step>
+  <Step title="Result screen">
+    See the round winner, the full scoreboard, and two buttons: **Siguiente ronda** to play again or **Terminar partida** to end the session and see final standings.
+  </Step>
+</Steps>
+
+## Phase cycle
+
+The referee cycles through phases continuously during play. Each phase has a distinct colour and audio cue so you always know where you stand.
+
+```
+🟢 Safe phase
+      │
+      ▼
+🟡 Warning phase  ──(Traición: Falsa alarma)──▶  🟢 Safe phase
+      │
+      ▼
+🔴 Lava phase
+      │
+      ▼
+🟢 Safe phase
+      │
+     (repeat)
+```
+
+- **Safe phase (green):** the floor is safe. Move freely, grab items, reposition.
+- **Warning phase (amber):** lava is coming — get off the floor now. This phase is optional depending on pace settings; faster paces may shorten or skip it.
+- **Lava phase (red):** the floor is lava. Any floor contact costs a life (or eliminates you instantly in strict mode).
+
+<Note>
+  The length of each phase varies with the **pace** setting you chose at setup. A faster pace means shorter safe windows and quicker lava cycles.
+</Note>
+
+## Traición mode variations
+
+When **Traición** mode is enabled, the referee can break the normal pattern in two ways.
+
+<CardGroup cols={2}>
+  <Card title="Falsa alarma (fake-out)" icon="triangle-exclamation">
+    A warning phase builds tension… then resolves to **safe** instead of lava. The voice calls it out as a false alarm. If you dived onto the sofa for nothing, that's on the game — not you.
+  </Card>
+  <Card title="Sneak lava" icon="fire">
+    The safe phase jumps **directly to lava** with no warning at all. No amber, no countdown — just sudden red. Stay alert even when everything looks calm.
+  </Card>
+</CardGroup>
+
+<Warning>
+  In Traición mode you can never fully relax during a safe phase. A sneak lava can fire at any moment. Keep one foot near higher ground.
+</Warning>
+
+## In-game controls
+
+During play, a controls bar stays visible at the top of the screen. These are your live tools for managing the round.
+
+| Icon | Action |
+|---|---|
+| **⏸** | Pause / resume the round. The phase cycle freezes; no lives can be lost while paused. |
+| **🗣️** | Toggle the voice announcer on or off. SFX continue independently. |
+| **🔊** | Toggle sound effects on or off. Voice continues independently. |
+| **↩** | Undo the last life deduction. Tap once per deduction you want to reverse. |
+
+<Tip>
+  Tap ↩ immediately after a contested call — once the phase changes and more action happens, it becomes harder to track exactly which deduction you want to reverse.
+</Tip>
+
+## PiP camera overlay
+
+When camera mode is active, a **Picture-in-Picture (PiP)** overlay appears in the top-right corner of the screen. It shows the live camera feed with coloured dots marking each tracked player.
+
+- Dots change colour to reflect each player's assigned colour.
+- A dot on a floor cell during lava is what triggers the auto-deduction.
+- Tap the overlay to expand the camera view if you need a closer look at a disputed call.
+
+<Info>
+  If a player's dot isn't appearing correctly, check that their colour assignment on the setup screen matches what they're actually wearing or holding. Lighting changes can affect detection.
+</Info>
+
+## Result screen breakdown
+
+After a round ends, the result screen gives you a full summary:
+
+- **Kicker text** — a short flavour line from the announcer (e.g. "¡El suelo era lava!").
+- **Winner name** — the round victor highlighted at the top, or "Empate" for a draw.
+- **Score summary** — the live scoreboard showing wins, items, and steps for every player.
+- **Siguiente ronda** — resets lives and items, carries forward win counts, and returns to the setup screen.
+- **Terminar partida** — closes the session, triggers the voice announcement of the overall champion, and shows final standings.
+
+<Note>
+  When you tap **Siguiente ronda**, win counts from all previous rounds remain intact. Only per-round values (lives, items collected that round) reset.
+</Note>

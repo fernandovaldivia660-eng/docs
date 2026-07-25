@@ -1,0 +1,148 @@
+---
+title: "Fix voice not working in El Piso es Lava"
+sidebarTitle: "No Voice"
+description: "Diagnose and fix voice and speech synthesis issues in El Piso es Lava, from silent audio to wrong language accents and error codes."
+---
+
+The voice referee is one of the most important parts of El Piso es Lava — it calls out player names, counts down rounds, and keeps the energy going. If the voice has gone quiet, sounds strange, or shows an error, the fixes below will get it talking again.
+
+<Warning>
+  **iPhone users: check your mute switch first.** The physical ring/silent switch on the left side of your iPhone silences *all* app audio, including speech synthesis. If you can see an orange dot on the switch, it is set to silent. Flip it up (away from the screen) to unmute. This is the most common cause of missing voice on iOS.
+</Warning>
+
+<AccordionGroup>
+  <Accordion title="The voice is completely silent — what do I do?">
+    Work through these checks in order:
+
+    **1. Check the iPhone mute switch**
+
+    If you are on an iPhone, the ring/silent switch on the left side of the device overrides all in-app volume controls. Look for an orange dot — if you see it, the phone is muted. Flip the switch up to unmute it, then try the game again.
+
+    **2. Check your device volume**
+
+    Press the volume-up button on the side of your phone or tablet and make sure media volume is turned up. On Android, media volume and ring volume are separate — pull down the notification shade and expand the volume slider to confirm media volume specifically.
+
+    **3. Tap "Probar voz" to trigger audio**
+
+    Browsers require at least one tap or click before they allow speech synthesis to start. This is a security rule built into the browser — the app cannot work around it. Tap the **Probar voz** button in the voice settings panel. If audio plays, you are good to go. If the game was already running, stop it and restart it after tapping Probar voz first.
+
+    **4. Start the game with a deliberate tap**
+
+    If Probar voz is unavailable, tapping the main **Iniciar** button also counts as the required user gesture and will unlock speech synthesis for that session.
+  </Accordion>
+
+  <Accordion title="The voice sounds like it's speaking the wrong language or has a weird accent">
+    El Piso es Lava uses your device's built-in text-to-speech (TTS) engine to speak in Spanish. If no Spanish voice is installed, the app falls back to your device's default voice, which may pronounce Spanish words with a completely different accent or language.
+
+    The fix is to download a Spanish voice directly on your device.
+
+    **On iPhone or iPad**
+
+    <Steps>
+      <Step title="Open Settings">
+        Go to **Settings** on your iPhone or iPad.
+      </Step>
+      <Step title="Navigate to Spoken Content">
+        Tap **Accessibility** → **Spoken Content** → **Voices**.
+      </Step>
+      <Step title="Select Spanish">
+        Tap **Spanish** (you may see regional variants such as *Spanish (Spain)*, *Spanish (Mexico)*, or *Spanish (US)*). Any of these will work.
+      </Step>
+      <Step title="Download a voice">
+        Tap a voice name, then tap the download icon next to the quality level you prefer. Enhanced or Premium quality voices sound the most natural.
+      </Step>
+      <Step title="Reload the app">
+        Return to El Piso es Lava and reload the page. Open the voice settings and tap **Probar voz** — you should now hear proper Spanish.
+      </Step>
+    </Steps>
+
+    **On Android**
+
+    <Steps>
+      <Step title="Open Settings">
+        Go to **Settings** on your Android device.
+      </Step>
+      <Step title="Find Text-to-Speech">
+        Navigate to **General Management** → **Language and Input** → **Text-to-speech**. The exact path varies by manufacturer — search for "text-to-speech" in Settings if you can't find it.
+      </Step>
+      <Step title="Install a Spanish engine">
+        Tap the settings icon next to your TTS engine (usually Google Text-to-Speech). Tap **Install voice data**, then choose **Spanish** and download your preferred regional variant.
+      </Step>
+      <Step title="Reload the app">
+        Return to El Piso es Lava, reload the page, and tap **Probar voz** to confirm the Spanish voice is now selected.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="The voice starts but stops mid-sentence">
+    This is a known quirk in mobile browsers. iOS and Android can suspend the speech synthesis engine when the screen dims, the browser tab loses focus, or the system decides to reclaim resources. You may hear the voice cut off abruptly mid-word.
+
+    El Piso es Lava already has a built-in workaround: it calls `speechSynthesis.resume()` automatically every 7 seconds to keep the engine alive. In most cases the voice recovers on its own within a moment.
+
+    If the stopping is persistent or annoying, try this:
+
+    <Steps>
+      <Step title="Toggle the voice off and back on">
+        Tap the 🗣️ voice icon in the game controls to turn voice off, wait two seconds, then tap it again to turn it back on. This resets the speech queue.
+      </Step>
+      <Step title="Keep the screen on">
+        Go to your device's display settings and temporarily disable auto-lock while playing. On iOS this is under **Settings → Display & Brightness → Auto-Lock**. Keeping the screen awake prevents the system from suspending audio.
+      </Step>
+      <Step title="Switch to Chrome (Android)">
+        If you are on Android, Chrome handles speech synthesis more reliably than other browsers. If you are using a less common browser, try switching to Chrome.
+      </Step>
+    </Steps>
+  </Accordion>
+
+  <Accordion title="I see an error in the voice status field">
+    The status field below the voice controls shows the current state of the speech engine. Here is what each message means and what to do about it:
+
+    | Error code | What it means | What to do |
+    |---|---|---|
+    | `interrupted` | A new utterance started before the previous one finished | Harmless — the app handles this automatically |
+    | `canceled` | The speech queue was cleared | Harmless — happens during normal game resets |
+    | `not-allowed` | The browser blocked speech because no user gesture has occurred yet | Tap **Probar voz** or tap anywhere on the page first, then try again |
+    | `synthesis-failed` | The TTS engine failed to produce audio for this utterance | Try selecting a different voice in the voice settings, or toggle voice off and on |
+    | `synthesis-unavailable` | No TTS engine is available on this browser | Your browser may not support SpeechSynthesis — see the browser support guide |
+    | `network` | The voice engine requires a network connection and is offline | This only affects cloud-based voices; switch to an on-device voice in your system settings |
+
+    After resolving the underlying cause, tap **Probar voz** to confirm the voice is working before restarting the game.
+  </Accordion>
+
+  <Accordion title="The voice works on desktop but not on my phone">
+    The most likely cause is that you are using **Firefox on Android**. Firefox for Android does not implement the Web Speech API (`SpeechSynthesis`), so voice is completely unavailable regardless of which voices you have installed.
+
+    **Solution:** Switch to a supported mobile browser.
+
+    <CardGroup cols={2}>
+      <Card title="Chrome for Android" icon="chrome">
+        The best overall experience on Android. Download it from the Google Play Store and open El Piso es Lava there.
+      </Card>
+      <Card title="Samsung Internet" icon="mobile">
+        A solid alternative on Samsung devices. Supports voice, camera, and Wake Lock. Available from the Galaxy Store or Play Store.
+      </Card>
+    </CardGroup>
+
+    Firefox on **desktop** does support SpeechSynthesis, so if you are testing on a computer and it works there but not on your Android phone, switching browsers is the fix.
+  </Accordion>
+
+  <Accordion title="I'm opening the page inside another app and the voice doesn't work">
+    If you are opening El Piso es Lava from a link inside a social media app (Instagram, WhatsApp, Telegram, TikTok, etc.) or an embedded webview, you are likely running inside an **iframe or in-app browser**. El Piso es Lava detects this and shows a warning banner at the top of the page.
+
+    In-app browsers and iframes block both speech synthesis and camera access as a security measure. The app cannot override this restriction.
+
+    **The fix is straightforward:**
+
+    <Steps>
+      <Step title="Download the HTML file">
+        Save the El Piso es Lava `.html` file directly to your device's storage or Files app.
+      </Step>
+      <Step title="Open it in Safari or Chrome">
+        On iPhone, tap **Share** → **Open in Safari**. On Android, locate the file in your Downloads folder and open it with Chrome.
+      </Step>
+      <Step title="Confirm the warning banner is gone">
+        When the file opens directly in a real browser tab, the iframe warning banner will not appear and voice will work normally.
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>

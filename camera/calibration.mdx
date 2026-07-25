@@ -1,0 +1,93 @@
+---
+title: "Calibrate the camera for El Piso es Lava"
+sidebarTitle: "Calibration"
+description: "Step-by-step guide to the four-step camera setup wizard: frame the room, mark safe zones, register player colors, and test tracking."
+---
+
+Before the game starts, El Piso es Lava walks you through a four-step calibration wizard that teaches the camera where the play area is, which parts of the floor are safe, and what color each player is wearing. The whole process takes about two minutes and only needs to be repeated if you change rooms or swap players.
+
+<Warning>
+The calibration wizard requires camera access. Make sure you are opening the app over **HTTPS** or as a local file, and that your browser has been granted camera permission. Camera access is **blocked inside iframes** — open the app in its own browser tab.
+</Warning>
+
+<Tip>
+Run calibration with the **room lighting you plan to play in**. Shadows that appear after you calibrate can confuse the tracker. Bright, even light gives the best results.
+</Tip>
+
+---
+
+## The calibration wizard
+
+<Steps>
+  <Step title="Frame the room — Encuadra el cuarto">
+    Prop your phone or tablet so the camera has a clear, overhead view of the entire play area — ideally from a shelf, stack of books, or a small stand. The more of the floor you can see, the more accurately the tracker can spot lava violations.
+
+    - The **rear camera** is selected by default for a better wide-angle view. If you need the front camera instead, tap **Voltear** to switch.
+    - Check that all the places players will stand are visible inside the frame. Edges cut off by the camera boundary will not be tracked.
+    - Once you are happy with the framing, tap **Continuar**.
+  </Step>
+
+  <Step title="Mark safe zones — Marca lo seguro">
+    A **10 × 8 grid** overlays the live camera feed, dividing the room into eighty cells. Your job is to tell the app which cells are furniture — and therefore safe to stand on.
+
+    - **Tap any cell** that covers a sofa, cushion, chair, rug, or any other raised or off-limits surface. The cell turns **green** to confirm it is marked as safe.
+    - Tap a green cell a second time to unmark it if you made a mistake.
+    - Every cell you leave **unmarked** is treated as **floor = lava**. A player whose color is detected in an unmarked cell for 0.45 seconds will automatically lose a life.
+    - Take your time here — accurate safe-zone mapping is the most important part of fair, automatic refereeing.
+    - Tap **Continuar** when the grid matches your room layout.
+
+    <Note>
+    You can re-open the safe-zone editor between rounds if furniture gets rearranged mid-party.
+    </Note>
+  </Step>
+
+  <Step title="Register player colors — Ponte tu color">
+    The app introduces each player one at a time. When it is your turn, step in front of the camera holding your colored item clearly visible — a bracelet, a strip of colored paper, a sock, or anything in your assigned color.
+
+    - The app displays **which color it expects** for the current player.
+    - **Tap your color item on the screen** to sample that spot. The app reads the color at the point you tap.
+    - If the sampled color is too muted or too close to grey, the app shows a warning asking you to use something more vivid. Try a brighter item or move to better lighting and tap again.
+    - Repeat the process for every player in sequence.
+    - Tap **Continuar** to move on after all players are registered.
+
+    <Tip>
+    Hold your color item flat and face it directly toward the camera when you tap. Folds, shadows, or an angled surface can make the sampled color look darker than it really is.
+    </Tip>
+  </Step>
+
+  <Step title="Register the cup — Toca la copa">
+    This step only appears for game objectives that involve a cup: **Copa**, **Ida y vuelta**, and **Pasa la copa**.
+
+    - Tape a piece of **brightly colored paper** to the outside of the cup. The color must be different from all eight player colors and from the room background.
+    - Place the cup in its **starting position** — this is the home location the tracker measures movement from.
+    - **Tap the paper on screen** to sample its color.
+    - When the cup moves more than 11 % of the frame width away from its home position, the app automatically fires the *grabbed* event.
+    - Tap **Continuar** to proceed.
+
+    <Note>
+    If your game mode does not use a cup, this step is skipped automatically and you move straight to the test.
+    </Note>
+  </Step>
+
+  <Step title="Test — Prueba / Muévanse un poco">
+    The wizard finishes with a short live-tracking test so you can confirm everything is working before the game begins.
+
+    - Each player's **colored dot** appears on the camera overlay at their current position.
+    - A **gold circle** shows the cup's tracked location.
+    - Ask everyone to **walk around the play area** for a few seconds and watch that their dot follows them smoothly.
+    - If a dot **blinks or disappears**, the player's color item may be too faded or the lighting too dim. Ask them to swap for a brighter item or adjust the lights, then re-run calibration.
+    - Once you are satisfied that all dots are tracking correctly, tap **Listo** to finish calibration and start the game.
+  </Step>
+</Steps>
+
+---
+
+## Re-calibrating mid-game
+
+You can restart calibration at any point from the game settings menu. This is useful if:
+
+- A player loses their color item and needs to register a new one.
+- Furniture has moved and the safe-zone grid needs updating.
+- Lighting conditions have changed significantly.
+
+Restarting calibration pauses the current round but preserves scores.
